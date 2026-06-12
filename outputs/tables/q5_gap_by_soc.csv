@@ -1,0 +1,21 @@
+SOC_CODE,SOC_TITLE,filings,avg_offered_wage,bls_median,avg_gap,avg_gap_pct
+15-1251,Computer Programmers,761,100206.0,98670.0,1536.0,1.6
+15-1299,Computer Systems Engineers/Architects,3669,111727.0,108970.0,2757.0,2.5
+15-1244,Network and Computer Systems Administrators,250,104006.0,96800.0,7206.0,7.4
+15-1255,Web and Digital Interface Designers,97,106273.0,98090.0,8183.0,8.3
+15-1253,Software Quality Assurance Analysts and Testers,1020,112185.0,102610.0,9575.0,9.3
+15-1211,Computer Systems Analysts,1203,114088.0,103790.0,10298.0,9.9
+15-1243,Database Architects,129,151127.0,135980.0,15147.0,11.1
+15-1212,Information Security Analysts,235,145817.0,124910.0,20907.0,16.7
+15-1242,Database Administrators,210,129403.0,104620.0,24783.0,23.7
+15-1243,Data Warehousing Specialists,55,161117.0,135980.0,25137.0,18.5
+15-1241,Computer Network Architects,96,162397.0,130390.0,32007.0,24.5
+15-2051,Business Intelligence Analysts,645,147307.0,112590.0,34717.0,30.8
+15-1252,Software Developers,9501,168520.0,133080.0,35440.0,26.6
+15-1299,Information Technology Project Managers,1888,148278.0,108970.0,39308.0,36.1
+15-1231,Computer Network Support Specialists,24,115889.0,73340.0,42549.0,58.0
+15-2031,Operations Research Analysts,510,142052.0,91290.0,50762.0,55.6
+15-1299,"Computer Occupations, All Other",76,161828.0,108970.0,52858.0,48.5
+15-2041,Statisticians,215,160302.0,103300.0,57002.0,55.2
+15-1299,Information Security Engineers,31,170648.0,108970.0,61678.0,56.6
+15-1221,Computer and Information Research Scientists,180,203624.0,140910.0,62714.0,44.5
