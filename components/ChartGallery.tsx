@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export type Chart = {
@@ -51,9 +52,11 @@ export function ChartGallery({ charts }: ChartGalleryProps) {
               <p className="mt-2 text-sm leading-6 text-zinc-300">{chart.caption}</p>
             </div>
             <div className="bg-[#f5f0e8] p-3">
-              <img
+              <Image
                 src={chart.src}
                 alt={chart.caption}
+                width={1400}
+                height={875}
                 className="aspect-[16/10] w-full rounded-2xl object-contain transition duration-300 group-hover:scale-[1.015]"
               />
             </div>
@@ -89,9 +92,11 @@ export function ChartGallery({ charts }: ChartGalleryProps) {
               </button>
             </div>
             <div className="max-h-[76vh] overflow-auto bg-[#f5f0e8] p-4">
-              <img
+              <Image
                 src={activeChart.src}
                 alt={activeChart.caption}
+                width={1800}
+                height={1125}
                 className="mx-auto h-auto w-full max-w-none rounded-2xl object-contain"
               />
             </div>
