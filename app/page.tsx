@@ -1,5 +1,8 @@
+import Image from "next/image";
 import { AnimatedStatCard } from "@/components/AnimatedStatCard";
 import { ChartGallery, type Chart } from "@/components/ChartGallery";
+
+const githubUrl = "https://github.com/vamika27/h1b-wage-level-analyzer";
 
 const charts: Chart[] = [
   {
@@ -37,27 +40,39 @@ const charts: Chart[] = [
   }
 ];
 
+const techStack = ["Python", "pandas", "DuckDB", "SQL", "matplotlib", "seaborn"];
+
 const pipelineSteps = [
-  "DOL LCA Data",
+  "DOL Excel",
   "Python Cleaning",
-  "DuckDB SQL Analysis",
-  "BLS Benchmark Join",
-  "Wage Gap Calculation"
+  "DuckDB SQL",
+  "BLS Join",
+  "Wage Gap Calc",
+  "Visualization"
 ];
 
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-cream text-ink">
-      <section
-        id="top"
-        className="relative isolate flex min-h-screen items-center px-5 py-10 sm:px-8"
-      >
-        <div className="absolute inset-0 -z-10 bg-warm-wash" />
-        <div className="absolute inset-x-6 top-6 z-10 mx-auto flex max-w-7xl items-center justify-between rounded-full border border-slate/60 bg-creamSoft/85 px-5 py-3 text-xs uppercase tracking-[0.22em] text-ink/60 backdrop-blur md:text-sm">
-          <a href="#top" className="text-gold transition hover:text-amberSoft">
-            H-1B Analyzer
+      <div className="sticky top-0 z-50 px-4 pt-4 sm:px-6">
+        <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-gold/20 bg-gold/[0.09] px-4 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-ink/70 shadow-card backdrop-blur-md transition-shadow duration-300 md:px-5 md:text-sm">
+          <a
+            href="#top"
+            className="flex items-center gap-3 text-gold transition hover:text-amberSoft"
+          >
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate/60 bg-creamSoft p-1 shadow-card">
+              <Image
+                src="/logo.png"
+                alt="H-1B Analyzer logo"
+                width={32}
+                height={32}
+                className="h-8 w-8 rounded-lg object-cover"
+                priority
+              />
+            </span>
+            <span>H-1B Analyzer</span>
           </a>
-          <nav className="hidden gap-6 md:flex">
+          <nav className="hidden items-center gap-6 md:flex">
             <a className="transition hover:text-gold" href="#findings">
               Findings
             </a>
@@ -70,10 +85,24 @@ export default function Home() {
             <a className="transition hover:text-gold" href="#data">
               Data
             </a>
+            <a
+              className="rounded-full border border-gold/30 bg-creamSoft/70 px-4 py-2 text-gold transition hover:border-gold/60 hover:text-amberSoft"
+              href={githubUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Source Code
+            </a>
           </nav>
         </div>
+      </div>
+      <section
+        id="top"
+        className="relative isolate flex min-h-[calc(100vh-5rem)] items-center px-5 py-10 sm:px-8"
+      >
+        <div className="absolute inset-0 -z-10 bg-warm-wash" />
 
-        <div className="mx-auto grid w-full max-w-7xl items-center gap-12 pt-16 lg:grid-cols-[1.12fr_0.88fr]">
+        <div className="mx-auto grid w-full max-w-7xl items-center gap-12 lg:grid-cols-[1.12fr_0.88fr]">
           <div>
             <p className="mb-5 inline-flex rounded-full border border-gold/30 bg-gold/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-gold">
               FY2024 Federal Visa Records
@@ -94,7 +123,20 @@ export default function Home() {
               <span className="text-sage/70">/</span>
               <span>8 Tech Occupations</span>
               <span className="text-sage/70">/</span>
+              <span>6 SQL Queries</span>
+              <span className="text-sage/70">/</span>
               <span>FY2024 DOL Data</span>
+            </div>
+
+            <div className="mt-6 flex flex-wrap gap-2">
+              {techStack.map((tool) => (
+                <span
+                  key={tool}
+                  className="rounded-full border border-sage/30 bg-sage/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-sage"
+                >
+                  {tool}
+                </span>
+              ))}
             </div>
 
             <div className="mt-10 flex flex-wrap gap-4">
@@ -109,6 +151,14 @@ export default function Home() {
                 className="rounded-full border border-slate/70 px-6 py-3 text-sm font-bold uppercase tracking-[0.18em] text-ink transition hover:border-gold hover:text-gold"
               >
                 Methodology
+              </a>
+              <a
+                href={githubUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full border border-gold/40 bg-creamSoft/80 px-6 py-3 text-sm font-bold uppercase tracking-[0.18em] text-gold transition hover:border-gold hover:text-amberSoft"
+              >
+                View Source Code
               </a>
             </div>
           </div>
@@ -128,6 +178,7 @@ export default function Home() {
               <div className="space-y-5">
                 {[
                   ["Applications", "560K+", "Federal LCA records screened"],
+                  ["SQL Queries", "6", "Analytical outputs produced with DuckDB"],
                   ["Employers", "20+", "Major company sponsors compared"],
                   ["Occupations", "SOC 15", "Computer & mathematical roles"],
                   ["Benchmarks", "BLS OEWS", "National medians joined by SOC"]
@@ -233,9 +284,23 @@ export default function Home() {
                   wage_gap_pct = (offered_wage - bls_median) / bls_median &times; 100
                 </code>
               </div>
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                <div className="rounded-2xl border border-slate/60 bg-cream/75 p-4">
+                  <p className="font-serif text-3xl text-sage">560K+</p>
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-ink/55">
+                    Records Processed
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-slate/60 bg-cream/75 p-4">
+                  <p className="font-serif text-3xl text-sage">6</p>
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-ink/55">
+                    SQL Query Outputs
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div className="grid gap-4">
+            <div className="flex flex-col justify-center">
               {pipelineSteps.map((step, index) => (
                 <div key={step} className="relative">
                   <div className="rounded-2xl border border-slate/60 bg-cream/75 p-5">
@@ -252,7 +317,9 @@ export default function Home() {
                     </div>
                   </div>
                   {index < pipelineSteps.length - 1 ? (
-                    <div className="mx-9 h-5 w-px bg-gradient-to-b from-sage/60 to-transparent" />
+                    <div className="flex h-7 items-center pl-5 text-sage" aria-hidden="true">
+                      &darr;
+                    </div>
                   ) : null}
                 </div>
               ))}
@@ -280,10 +347,18 @@ export default function Home() {
                 description="National occupational employment and wage statistics used for median wage benchmarks."
               />
               <SourceLink
-                href="https://github.com/vamika27/h1b-wage-level-analyzer"
+                href={githubUrl}
                 title="GitHub Repository"
                 description="Analysis code, SQL, outputs, and documentation for the H-1B Wage Level Analyzer."
               />
+            </div>
+            <div className="mt-6 rounded-2xl border border-sage/25 bg-sage/10 p-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sage">
+                Wage Gap Formula
+              </p>
+              <code className="mt-3 block overflow-x-auto whitespace-nowrap font-mono text-sm text-ink md:text-base">
+                wage_gap_pct = (offered_wage - bls_median) / bls_median &times; 100
+              </code>
             </div>
           </div>
 
@@ -313,7 +388,9 @@ export default function Home() {
             DOL FY2024 · Tools: Python, DuckDB, pandas, matplotlib
           </p>
           <a
-            href="https://github.com/vamika27/h1b-wage-level-analyzer"
+            href={githubUrl}
+            target="_blank"
+            rel="noreferrer"
             className="text-gold transition hover:text-amberSoft"
           >
             GitHub
@@ -358,11 +435,12 @@ function SourceLink({
 
 function getPipelineDetail(step: string) {
   const details: Record<string, string> = {
-    "DOL LCA Data": "Raw FY2024 visa disclosure records from OFLC.",
+    "DOL Excel": "Raw FY2024 LCA disclosure records from OFLC.",
     "Python Cleaning": "Normalize employer names, SOC codes, wages, and levels.",
-    "DuckDB SQL Analysis": "Aggregate filings, wage-level shares, and company metrics.",
-    "BLS Benchmark Join": "Attach OEWS national medians by matched occupation.",
-    "Wage Gap Calculation": "Compare offered wages to occupational median benchmarks."
+    "DuckDB SQL": "Aggregate filings, wage-level shares, and company metrics.",
+    "BLS Join": "Attach OEWS national medians by matched occupation.",
+    "Wage Gap Calc": "Compare offered wages to occupational median benchmarks.",
+    Visualization: "Export six polished figures for the static web gallery."
   };
 
   return details[step];

@@ -38,26 +38,26 @@ export function ChartGallery({ charts }: ChartGalleryProps) {
 
   return (
     <>
-      <div className="grid gap-6 lg:grid-cols-2">
+      <div className="grid items-start gap-6 lg:grid-cols-2">
         {charts.map((chart) => (
           <button
             key={chart.src}
             type="button"
             onClick={() => setActiveChart(chart)}
-            className="chart-frame group overflow-hidden rounded-3xl border border-slate/60 text-left shadow-card transition duration-300 hover:-translate-y-1 hover:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/60"
+            className="chart-frame group flex flex-col overflow-hidden rounded-3xl border border-slate/60 text-left shadow-card transition duration-300 hover:-translate-y-1 hover:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/60"
             aria-label={`Open ${chart.title} chart at full size`}
           >
             <div className="border-b border-slate/60 bg-charcoal/70 p-5">
               <h3 className="font-serif text-2xl text-ink">{chart.title}</h3>
               <p className="mt-2 text-sm leading-6 text-ink/70">{chart.caption}</p>
             </div>
-            <div className="bg-[#f5f0e8] p-3">
+            <div className="flex h-72 items-center justify-center bg-[#f5f0e8] p-3 sm:h-80 lg:h-[22rem]">
               <Image
                 src={chart.src}
                 alt={chart.caption}
                 width={1400}
                 height={875}
-                className="aspect-[16/10] w-full rounded-2xl object-contain transition duration-300 group-hover:scale-[1.015]"
+                className="h-full w-full rounded-2xl object-contain transition duration-300 group-hover:scale-[1.015]"
               />
             </div>
           </button>
