@@ -18,6 +18,11 @@ export const metadata: Metadata = {
   title: "H-1B Wage Level Analyzer",
   description:
     "A data dashboard analyzing FY2024 H-1B wage classification patterns across major U.S. companies and tech occupations.",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png"
+  },
   openGraph: {
     title: "H-1B Wage Level Analyzer",
     description:
