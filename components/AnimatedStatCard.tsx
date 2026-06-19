@@ -77,12 +77,12 @@ export function AnimatedStatCard({
   return (
     <div
       ref={cardRef}
-      className={`group rounded-3xl border border-white/10 bg-white/[0.045] p-6 shadow-card backdrop-blur transition duration-700 hover:-translate-y-1 hover:border-gold/45 hover:bg-white/[0.07] ${
+      className={`group rounded-3xl border border-slate/60 bg-creamSoft/75 p-6 shadow-card backdrop-blur transition duration-700 hover:-translate-y-1 hover:border-gold/50 hover:bg-creamSoft ${
         hasEntered ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
       }`}
     >
       <div className="mb-5 h-px w-16 bg-gold/70 transition group-hover:w-24" />
-      <p className="font-serif text-4xl leading-none tracking-tight text-parchment md:text-5xl">
+      <p className="font-serif text-4xl leading-none tracking-tight text-ink md:text-5xl">
         {prefix}
         {formattedValue}
         {suffix}
@@ -90,7 +90,7 @@ export function AnimatedStatCard({
       <p className="mt-4 text-sm font-semibold uppercase tracking-[0.24em] text-gold">
         {label}
       </p>
-      <p className="mt-3 text-sm leading-6 text-zinc-300">{detail}</p>
+      <p className="mt-3 text-sm leading-6 text-ink/70">{detail}</p>
     </div>
   );
 }
