@@ -38,26 +38,26 @@ export function ChartGallery({ charts }: ChartGalleryProps) {
 
   return (
     <>
-      <div className="grid gap-6 lg:grid-cols-2">
+      <div className="grid items-start gap-6 lg:grid-cols-2">
         {charts.map((chart) => (
           <button
             key={chart.src}
             type="button"
             onClick={() => setActiveChart(chart)}
-            className="chart-frame group overflow-hidden rounded-3xl border border-white/10 text-left shadow-card transition duration-300 hover:-translate-y-1 hover:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/70"
+            className="chart-frame group flex flex-col overflow-hidden rounded-3xl border border-slate/60 text-left shadow-card transition duration-300 hover:-translate-y-1 hover:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/60"
             aria-label={`Open ${chart.title} chart at full size`}
           >
-            <div className="border-b border-white/10 bg-ink/45 p-5">
-              <h3 className="font-serif text-2xl text-parchment">{chart.title}</h3>
-              <p className="mt-2 text-sm leading-6 text-zinc-300">{chart.caption}</p>
+            <div className="border-b border-slate/60 bg-charcoal/70 p-5">
+              <h3 className="font-serif text-2xl text-ink">{chart.title}</h3>
+              <p className="mt-2 text-sm leading-6 text-ink/70">{chart.caption}</p>
             </div>
-            <div className="bg-[#f5f0e8] p-3">
+            <div className="flex h-72 items-center justify-center bg-[#f5f0e8] p-3 sm:h-80 lg:h-[22rem]">
               <Image
                 src={chart.src}
                 alt={chart.caption}
                 width={1400}
                 height={875}
-                className="aspect-[16/10] w-full rounded-2xl object-contain transition duration-300 group-hover:scale-[1.015]"
+                className="h-full w-full rounded-2xl object-contain transition duration-300 group-hover:scale-[1.015]"
               />
             </div>
           </button>
@@ -66,27 +66,27 @@ export function ChartGallery({ charts }: ChartGalleryProps) {
 
       {activeChart ? (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-ink/90 p-4 backdrop-blur-md"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-ink/45 p-4 backdrop-blur-md"
           role="dialog"
           aria-modal="true"
           aria-label={`${activeChart.title} full-size chart`}
           onClick={() => setActiveChart(null)}
         >
           <div
-            className="max-h-[92vh] w-full max-w-7xl overflow-hidden rounded-3xl border border-gold/30 bg-charcoal shadow-2xl"
+            className="max-h-[92vh] w-full max-w-7xl overflow-hidden rounded-3xl border border-gold/30 bg-creamSoft shadow-2xl"
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="flex items-start justify-between gap-4 border-b border-white/10 p-4 md:p-5">
+            <div className="flex items-start justify-between gap-4 border-b border-slate/60 p-4 md:p-5">
               <div>
-                <h3 className="font-serif text-2xl text-parchment">
+                <h3 className="font-serif text-2xl text-ink">
                   {activeChart.title}
                 </h3>
-                <p className="mt-1 text-sm text-zinc-300">{activeChart.caption}</p>
+                <p className="mt-1 text-sm text-ink/70">{activeChart.caption}</p>
               </div>
               <button
                 type="button"
                 onClick={() => setActiveChart(null)}
-                className="rounded-full border border-white/15 px-4 py-2 text-sm text-zinc-200 transition hover:border-gold/70 hover:text-gold focus:outline-none focus:ring-2 focus:ring-gold/70"
+                className="rounded-full border border-slate/70 px-4 py-2 text-sm text-ink/75 transition hover:border-gold/70 hover:text-gold focus:outline-none focus:ring-2 focus:ring-gold/60"
               >
                 Close
               </button>

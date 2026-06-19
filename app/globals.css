@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
-  background: #111318;
+  color-scheme: light;
+  background: #f0ebe3;
 }
 
 * {
@@ -19,15 +19,14 @@ body {
   min-height: 100vh;
   margin: 0;
   background:
-    radial-gradient(circle at 78% 8%, rgba(214, 168, 79, 0.14), transparent 30rem),
-    radial-gradient(circle at 10% 2%, rgba(69, 90, 130, 0.18), transparent 28rem),
-    #111318;
-  color: #f6efe1;
+    linear-gradient(135deg, rgba(248, 243, 235, 0.96), rgba(237, 230, 218, 0.72)),
+    #f0ebe3;
+  color: #2b2520;
 }
 
 ::selection {
-  background: rgba(214, 168, 79, 0.32);
-  color: #fff8e8;
+  background: rgba(185, 133, 144, 0.32);
+  color: #2b2520;
 }
 
 img {
@@ -36,10 +35,10 @@ img {
 
 .chart-frame {
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
-    rgba(23, 26, 32, 0.88);
+    linear-gradient(145deg, rgba(248, 243, 235, 0.92), rgba(231, 222, 208, 0.78)),
+    rgba(248, 243, 235, 0.9);
 }
 
 .gold-rule {
-  background: linear-gradient(90deg, transparent, rgba(214, 168, 79, 0.72), transparent);
+  background: linear-gradient(90deg, transparent, rgba(185, 133, 144, 0.58), transparent);
 }

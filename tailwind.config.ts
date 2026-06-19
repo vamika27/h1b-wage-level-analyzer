@@ -10,29 +10,31 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
         serif: [
-          "var(--font-libre-baskerville)",
-          "Libre Baskerville",
+          "var(--font-fraunces)",
+          "Fraunces",
           "Georgia",
           "serif"
         ]
       },
       colors: {
-        ink: "#111318",
-        charcoal: "#171a20",
-        slate: "#222731",
-        gold: "#d6a84f",
-        amberSoft: "#f0c36a",
-        parchment: "#f6efe1"
+        ink: "#2B2520",
+        charcoal: "#E7DED0",
+        slate: "#D4C8B8",
+        cream: "#F0EBE3",
+        creamSoft: "#F8F3EB",
+        gold: "#B98590",
+        amberSoft: "#C98E96",
+        sage: "#7C8C6F",
+        sageSoft: "#8A9A7E",
+        parchment: "#2B2520"
       },
       boxShadow: {
-        glow: "0 0 60px rgba(214, 168, 79, 0.12)",
-        card: "0 24px 80px rgba(0, 0, 0, 0.32)"
+        glow: "0 22px 70px rgba(43, 37, 32, 0.08)",
+        card: "0 22px 60px rgba(43, 37, 32, 0.1)"
       },
       backgroundImage: {
-        "radial-gold":
-          "radial-gradient(circle at top right, rgba(214, 168, 79, 0.18), transparent 36rem)",
-        "radial-blue":
-          "radial-gradient(circle at top left, rgba(84, 110, 150, 0.16), transparent 32rem)"
+        "warm-wash":
+          "linear-gradient(135deg, rgba(248, 243, 235, 0.9), rgba(240, 235, 227, 0.32))"
       }
     }
   },

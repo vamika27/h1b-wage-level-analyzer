@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Libre_Baskerville } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -8,17 +8,22 @@ const inter = Inter({
   display: "swap"
 });
 
-const libreBaskerville = Libre_Baskerville({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-libre-baskerville",
+  variable: "--font-fraunces",
   display: "swap"
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://h-1b-wage-level-analyzer-vamika-negi.vercel.app"),
   title: "H-1B Wage Level Analyzer",
   description:
     "A data dashboard analyzing FY2024 H-1B wage classification patterns across major U.S. companies and tech occupations.",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png"
+  },
   openGraph: {
     title: "H-1B Wage Level Analyzer",
     description:
@@ -33,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${libreBaskerville.variable}`}>
+    <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
       <body className="font-sans antialiased">{children}</body>
     </html>
   );
