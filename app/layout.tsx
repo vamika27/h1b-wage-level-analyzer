@@ -15,6 +15,7 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://h-1b-wage-level-analyzer-vamika-negi.vercel.app"),
   title: "H-1B Wage Level Analyzer",
   description:
     "A data dashboard analyzing FY2024 H-1B wage classification patterns across major U.S. companies and tech occupations.",
